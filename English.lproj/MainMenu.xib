@@ -42,7 +42,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="NSMenuItem" id="694149608">
 						<reference key="NSMenu" ref="649796088"/>
-						<string key="NSTitle">NewApplication</string>
+						<string key="NSTitle">Tomato</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSKeyEquivModMask">1048576</int>
 						<int key="NSMnemonicLoc">2147483647</int>
@@ -56,12 +56,12 @@
 						</object>
 						<string key="NSAction">submenuAction:</string>
 						<object class="NSMenu" key="NSSubmenu" id="110575045">
-							<string key="NSTitle">NewApplication</string>
+							<string key="NSTitle">Tomato</string>
 							<object class="NSMutableArray" key="NSMenuItems">
 								<bool key="EncodedWithXMLCoder">YES</bool>
 								<object class="NSMenuItem" id="238522557">
 									<reference key="NSMenu" ref="110575045"/>
-									<string key="NSTitle">About NewApplication</string>
+									<string key="NSTitle">About Tomato</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
@@ -3237,7 +3237,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>{{525, 802}, {197, 73}}</string>
-					<string>{{207, 285}, {478, 20}}</string>
+					<string>{{207, 285}, {420, 20}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>{74, 862}</string>
@@ -3333,7 +3333,7 @@
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
-					<string>{{219, 102}, {245, 183}}</string>
+					<string>{{219, 102}, {235, 183}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>{{23, 794}, {245, 183}}</string>
