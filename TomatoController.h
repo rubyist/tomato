@@ -13,7 +13,7 @@
 #define TOMATORUNNING  1
 #define BREAKRUNNING   2
 
-#define TOMATOTIME 1500
+#define TOMATOTIME 1500;
 #define BREAKTIME   300
 
 @class iChatApplication;

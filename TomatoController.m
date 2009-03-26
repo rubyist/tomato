@@ -23,22 +23,21 @@
 
 - (void)iChatTomatoStatus {
     if ([iChatApp isRunning]) {
-        [iChatApp setStatusMessage:[NSString stringWithFormat:@"tomato (%d minutes)", tickCounter]];
+        iChatApp.statusMessage = [NSString stringWithFormat:@"tomato (%d minutes)", tickCounter];
     }
 }
 
-
 - (void)iChatInTomato {
     if ([iChatApp isRunning]) {
-        [iChatApp setStatus:iChatAccountStatusAway];
+        iChatApp.status = iChatAccountStatusAway;
         [self iChatTomatoStatus];
     }
 }
 
 - (void)iChatOnBreak {
     if ([iChatApp isRunning]) {
-        [iChatApp setStatus:iChatAccountStatusAvailable];
-        [iChatApp setStatusMessage:@"tomato break"];
+        iChatApp.status = iChatAccountStatusAvailable;
+        iChatApp.statusMessage = @"tomato break";
     }
 }
 
@@ -119,18 +118,15 @@
     if (status == TOMATORUNNING) {
         remaining = TOMATOTIME - interval;
         field = tomatoLabel;
+        if ((tickCounter > 0) && (remaining % 60 == 0)) {
+            tickCounter--;
+            [self iChatTomatoStatus];
+        }
     } else if (status == BREAKRUNNING) {
         remaining = BREAKTIME - interval;
         field = breakLabel;
     }
 
-    NSLog(@"Remaining is: %d", (remaining % 60));
-    
-    if (remaining % 60 == 0) {
-        tickCounter--;
-        [self iChatTomatoStatus];
-    }
-    
     [field setStringValue:[NSString stringWithFormat:@"%02d:%02d", (remaining / 60), (remaining % 60)]];
     
     if (remaining == 0) {
