@@ -21,10 +21,17 @@
     [statusLabel setStringValue:[NSString stringWithFormat:@"Completed: %d  Popped: %d", completedTomatoes, poppedTomatoes]];
 }
 
+- (void)iChatTomatoStatus {
+    if ([iChatApp isRunning]) {
+        [iChatApp setStatusMessage:[NSString stringWithFormat:@"tomato (%d minutes)", tickCounter]];
+    }
+}
+
+
 - (void)iChatInTomato {
     if ([iChatApp isRunning]) {
         [iChatApp setStatus:iChatAccountStatusAway];
-        [iChatApp setStatusMessage:@"tomato"];
+        [self iChatTomatoStatus];
     }
 }
 
@@ -91,6 +98,7 @@
         [tomatoButton setTitle:@"Start"];
         status = NOTHINGRUNNING;
         completedTomatoes++;
+        tickCounter = (TOMATOTIME / 60);
         [self breakStart:nil];
     } else if (status == BREAKRUNNING) {
         [tomatoTimer invalidate];
@@ -115,6 +123,13 @@
         remaining = BREAKTIME - interval;
         field = breakLabel;
     }
+
+    NSLog(@"Remaining is: %d", (remaining % 60));
+    
+    if (remaining % 60 == 0) {
+        tickCounter--;
+        [self iChatTomatoStatus];
+    }
     
     [field setStringValue:[NSString stringWithFormat:@"%02d:%02d", (remaining / 60), (remaining % 60)]];
     
@@ -137,6 +152,7 @@
         status = NOTHINGRUNNING;
         completedTomatoes = 0;
         poppedTomatoes = 0;
+        tickCounter = (TOMATOTIME / 60);
         
         NSBundle *mainBundle = [NSBundle mainBundle];
         NSURL *aFileURL = [NSURL fileURLWithPath:[mainBundle pathForResource:@"Bell" ofType:@"aif"] isDirectory:NO];

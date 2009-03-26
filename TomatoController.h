@@ -20,6 +20,7 @@
 
 @interface TomatoController : NSObject {
     int status;
+    int tickCounter;
     int completedTomatoes;
     int poppedTomatoes;
     IBOutlet NSTextField *tomatoLabel;
