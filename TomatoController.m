@@ -99,6 +99,7 @@
         completedTomatoes++;
         tickCounter = (TOMATOTIME / 60);
         [self breakStart:nil];
+        [[[NSApplication sharedApplication] dockTile] setBadgeLabel:@""];
     } else if (status == BREAKRUNNING) {
         [tomatoTimer invalidate];
         [breakLabel setStringValue:@"05:00"];
@@ -118,6 +119,9 @@
     if (status == TOMATORUNNING) {
         remaining = TOMATOTIME - interval;
         field = tomatoLabel;
+        
+        [[[NSApplication sharedApplication] dockTile] setBadgeLabel:[NSString stringWithFormat:@"%02d:%02d", (remaining / 60), (remaining % 60)]];
+        
         if ((tickCounter > 0) && (remaining % 60 == 0)) {
             tickCounter--;
             [self iChatTomatoStatus];
@@ -149,7 +153,7 @@
         completedTomatoes = 0;
         poppedTomatoes = 0;
         tickCounter = (TOMATOTIME / 60);
-        
+
         NSBundle *mainBundle = [NSBundle mainBundle];
         NSURL *aFileURL = [NSURL fileURLWithPath:[mainBundle pathForResource:@"Bell" ofType:@"aif"] isDirectory:NO];
         if (aFileURL != nil) {
