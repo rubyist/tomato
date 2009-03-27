@@ -12,6 +12,9 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		D246D5DA0F7AB48A004A02AC /* TomatoController.m in Sources */ = {isa = PBXBuildFile; fileRef = D246D5D90F7AB48A004A02AC /* TomatoController.m */; };
+		D269AC280F7D398400F1E262 /* TomatoWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D269AC270F7D398400F1E262 /* TomatoWindow.m */; };
+		D269AC360F7D3B0700F1E262 /* TomatoView.m in Sources */ = {isa = PBXBuildFile; fileRef = D269AC350F7D3B0700F1E262 /* TomatoView.m */; };
+		D269AC590F7D3D2700F1E262 /* tomato.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D269AC580F7D3D2700F1E262 /* tomato.tiff */; };
 		D2A980270F7B92BC003EC938 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A980260F7B92BC003EC938 /* ScriptingBridge.framework */; };
 		D2FB4A460F7AC6F80097B5A0 /* Bell.aif in Resources */ = {isa = PBXBuildFile; fileRef = D2FB4A450F7AC6F80097B5A0 /* Bell.aif */; };
 		D2FB4A480F7AC7120097B5A0 /* Hamon.aif in Resources */ = {isa = PBXBuildFile; fileRef = D2FB4A470F7AC7120097B5A0 /* Hamon.aif */; };
@@ -32,6 +35,11 @@
 		8D1107320486CEB800E47090 /* Tomato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tomato.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D246D5D80F7AB48A004A02AC /* TomatoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TomatoController.h; sourceTree = "<group>"; };
 		D246D5D90F7AB48A004A02AC /* TomatoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TomatoController.m; sourceTree = "<group>"; };
+		D269AC260F7D398400F1E262 /* TomatoWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TomatoWindow.h; sourceTree = "<group>"; };
+		D269AC270F7D398400F1E262 /* TomatoWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TomatoWindow.m; sourceTree = "<group>"; };
+		D269AC340F7D3B0700F1E262 /* TomatoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TomatoView.h; sourceTree = "<group>"; };
+		D269AC350F7D3B0700F1E262 /* TomatoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TomatoView.m; sourceTree = "<group>"; };
+		D269AC580F7D3D2700F1E262 /* tomato.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = tomato.tiff; sourceTree = "<group>"; };
 		D2A980260F7B92BC003EC938 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		D2A980360F7B9407003EC938 /* iChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iChat.h; sourceTree = "<group>"; };
 		D2FB4A450F7AC6F80097B5A0 /* Bell.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bell.aif; sourceTree = "<group>"; };
@@ -59,6 +67,10 @@
 			children = (
 				D246D5D80F7AB48A004A02AC /* TomatoController.h */,
 				D246D5D90F7AB48A004A02AC /* TomatoController.m */,
+				D269AC260F7D398400F1E262 /* TomatoWindow.h */,
+				D269AC270F7D398400F1E262 /* TomatoWindow.m */,
+				D269AC340F7D3B0700F1E262 /* TomatoView.h */,
+				D269AC350F7D3B0700F1E262 /* TomatoView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -114,6 +126,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D269AC580F7D3D2700F1E262 /* tomato.tiff */,
 				D2FB4AE10F7AD3500097B5A0 /* tomato.icns */,
 				D2FB4A470F7AC7120097B5A0 /* Hamon.aif */,
 				D2FB4A450F7AC6F80097B5A0 /* Bell.aif */,
@@ -183,6 +196,7 @@
 				D2FB4A460F7AC6F80097B5A0 /* Bell.aif in Resources */,
 				D2FB4A480F7AC7120097B5A0 /* Hamon.aif in Resources */,
 				D2FB4AE20F7AD3500097B5A0 /* tomato.icns in Resources */,
+				D269AC590F7D3D2700F1E262 /* tomato.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +209,8 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				D246D5DA0F7AB48A004A02AC /* TomatoController.m in Sources */,
+				D269AC280F7D398400F1E262 /* TomatoWindow.m in Sources */,
+				D269AC360F7D3B0700F1E262 /* TomatoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
