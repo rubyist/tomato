@@ -23,11 +23,11 @@
     int tickCounter;
     int completedTomatoes;
     int poppedTomatoes;
-    IBOutlet NSTextField *tomatoLabel;
-    IBOutlet NSTextField *breakLabel;
+
+    IBOutlet NSTextField *timeLabel;
     IBOutlet NSTextField *statusLabel;
+    IBOutlet NSTextField *completedPoppedLabel;
     IBOutlet NSButton *tomatoButton;
-    IBOutlet NSButton *breakButton;
     
     NSTimer *tomatoTimer;
     NSTimeInterval timerStart;
@@ -38,7 +38,6 @@
     iChatApplication *iChatApp;
 }
 
-- (IBAction)tomatoStart:(id)sender;
-- (IBAction)breakStart:(id)sender;
+- (IBAction)startStopPop:(id)sender;
 
 @end
