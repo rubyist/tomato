@@ -17,7 +17,7 @@
 }
 
 - (void)startStopPop;
-// read only tick property
+
 @property (nonatomic, readonly) int status;
 @property (nonatomic, readonly) int remaining;
 
