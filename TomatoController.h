@@ -7,20 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <AudioToolbox/AudioServices.h>
 
-#define NOTHINGRUNNING 0
-#define TOMATORUNNING  1
-#define BREAKRUNNING   2
-
-#define TOMATOTIME 1500
-#define BREAKTIME   300
-
-@class iChatApplication;
+@class TomatoTimer;
 
 @interface TomatoController : NSObject {
-    int status;
-    int tickCounter;
+    TomatoTimer *tomatoTimer;
+    
     int completedTomatoes;
     int poppedTomatoes;
 
@@ -28,14 +20,6 @@
     IBOutlet NSTextField *statusLabel;
     IBOutlet NSTextField *completedPoppedLabel;
     IBOutlet NSButton *tomatoButton;
-    
-    NSTimer *tomatoTimer;
-    NSTimeInterval timerStart;
-    
-    SystemSoundID tomatoSound;
-    SystemSoundID breakSound;
-    
-    iChatApplication *iChatApp;
 }
 
 - (IBAction)startStopPop:(id)sender;

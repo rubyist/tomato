@@ -16,6 +16,10 @@
 		D269AC360F7D3B0700F1E262 /* TomatoView.m in Sources */ = {isa = PBXBuildFile; fileRef = D269AC350F7D3B0700F1E262 /* TomatoView.m */; };
 		D269AC590F7D3D2700F1E262 /* tomato.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D269AC580F7D3D2700F1E262 /* tomato.tiff */; };
 		D2A980270F7B92BC003EC938 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A980260F7B92BC003EC938 /* ScriptingBridge.framework */; };
+		D2C4BB6D0FAF786D006F7A5C /* TomatoTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C4BB6C0FAF786D006F7A5C /* TomatoTimer.m */; };
+		D2C4BC180FAF8614006F7A5C /* TomatoSound.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C4BC170FAF8614006F7A5C /* TomatoSound.m */; };
+		D2C4BC430FAF87E0006F7A5C /* TomatoIChat.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C4BC420FAF87E0006F7A5C /* TomatoIChat.m */; };
+		D2C4BC800FAF8AD6006F7A5C /* TomatoDock.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C4BC7F0FAF8AD6006F7A5C /* TomatoDock.m */; };
 		D2FB4A460F7AC6F80097B5A0 /* Bell.aif in Resources */ = {isa = PBXBuildFile; fileRef = D2FB4A450F7AC6F80097B5A0 /* Bell.aif */; };
 		D2FB4A480F7AC7120097B5A0 /* Hamon.aif in Resources */ = {isa = PBXBuildFile; fileRef = D2FB4A470F7AC7120097B5A0 /* Hamon.aif */; };
 		D2FB4AA50F7ACEEA0097B5A0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FB4AA40F7ACEEA0097B5A0 /* AudioToolbox.framework */; };
@@ -42,6 +46,14 @@
 		D269AC580F7D3D2700F1E262 /* tomato.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = tomato.tiff; sourceTree = "<group>"; };
 		D2A980260F7B92BC003EC938 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		D2A980360F7B9407003EC938 /* iChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iChat.h; sourceTree = "<group>"; };
+		D2C4BB6B0FAF786D006F7A5C /* TomatoTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TomatoTimer.h; sourceTree = "<group>"; };
+		D2C4BB6C0FAF786D006F7A5C /* TomatoTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TomatoTimer.m; sourceTree = "<group>"; };
+		D2C4BC160FAF8614006F7A5C /* TomatoSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TomatoSound.h; sourceTree = "<group>"; };
+		D2C4BC170FAF8614006F7A5C /* TomatoSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TomatoSound.m; sourceTree = "<group>"; };
+		D2C4BC410FAF87E0006F7A5C /* TomatoIChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TomatoIChat.h; sourceTree = "<group>"; };
+		D2C4BC420FAF87E0006F7A5C /* TomatoIChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TomatoIChat.m; sourceTree = "<group>"; };
+		D2C4BC7E0FAF8AD6006F7A5C /* TomatoDock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TomatoDock.h; sourceTree = "<group>"; };
+		D2C4BC7F0FAF8AD6006F7A5C /* TomatoDock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TomatoDock.m; sourceTree = "<group>"; };
 		D2FB4A450F7AC6F80097B5A0 /* Bell.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bell.aif; sourceTree = "<group>"; };
 		D2FB4A470F7AC7120097B5A0 /* Hamon.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hamon.aif; sourceTree = "<group>"; };
 		D2FB4AA40F7ACEEA0097B5A0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -71,6 +83,14 @@
 				D269AC270F7D398400F1E262 /* TomatoWindow.m */,
 				D269AC340F7D3B0700F1E262 /* TomatoView.h */,
 				D269AC350F7D3B0700F1E262 /* TomatoView.m */,
+				D2C4BB6B0FAF786D006F7A5C /* TomatoTimer.h */,
+				D2C4BB6C0FAF786D006F7A5C /* TomatoTimer.m */,
+				D2C4BC160FAF8614006F7A5C /* TomatoSound.h */,
+				D2C4BC170FAF8614006F7A5C /* TomatoSound.m */,
+				D2C4BC410FAF87E0006F7A5C /* TomatoIChat.h */,
+				D2C4BC420FAF87E0006F7A5C /* TomatoIChat.m */,
+				D2C4BC7E0FAF8AD6006F7A5C /* TomatoDock.h */,
+				D2C4BC7F0FAF8AD6006F7A5C /* TomatoDock.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -211,6 +231,10 @@
 				D246D5DA0F7AB48A004A02AC /* TomatoController.m in Sources */,
 				D269AC280F7D398400F1E262 /* TomatoWindow.m in Sources */,
 				D269AC360F7D3B0700F1E262 /* TomatoView.m in Sources */,
+				D2C4BB6D0FAF786D006F7A5C /* TomatoTimer.m in Sources */,
+				D2C4BC180FAF8614006F7A5C /* TomatoSound.m in Sources */,
+				D2C4BC430FAF87E0006F7A5C /* TomatoIChat.m in Sources */,
+				D2C4BC800FAF8AD6006F7A5C /* TomatoDock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
