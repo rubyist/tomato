@@ -1,11 +1,3 @@
-//
-//  TomatoController.m
-//  Tomato
-//
-//  Created by Scott Barron on 3/25/09.
-//  Copyright 2009. All rights reserved.
-//
-
 #import "TomatoController.h"
 #import "TomatoTimer.h"
 
