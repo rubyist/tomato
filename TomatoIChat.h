@@ -1,8 +1,9 @@
 #import <Cocoa/Cocoa.h>
+#import "TomatoWatcher.h"
 
 @class iChatApplication;
 
-@interface TomatoIChat : NSObject {
+@interface TomatoIChat : TomatoWatcher {
     iChatApplication *iChatApp;
 }
 

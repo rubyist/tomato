@@ -1,7 +1,7 @@
 #import <Cocoa/Cocoa.h>
+#import "TomatoWatcher.h"
 
-
-@interface TomatoDock : NSObject {
+@interface TomatoDock : TomatoWatcher {
 
 }
 
