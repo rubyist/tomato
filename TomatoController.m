@@ -27,6 +27,8 @@
                       forKey:@"TOMSound"];
     [defaultValues setObject:[NSNumber numberWithBool:YES]
                       forKey:@"TOMDock"];
+    [defaultValues setObject:[NSNumber numberWithBool:YES]
+                      forKey:@"TOMDockBounce"];
     
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
 }

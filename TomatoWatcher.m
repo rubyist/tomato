@@ -12,7 +12,6 @@
 @implementation TomatoWatcher
 - (id)init {
     if (self = [super init]) {
-        NSLog(@"Initializing a %@", self);
         [self loadNotifications:nil];
     }
     return self;

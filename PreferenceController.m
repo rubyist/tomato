@@ -14,6 +14,7 @@
     [iChatCheckBox setState:[defaults boolForKey:@"TOMiChat"]];
     [soundCheckBox setState:[defaults boolForKey:@"TOMSound"]];
     [dockCheckBox setState:[defaults boolForKey:@"TOMDock"]];
+    [dockBounceCheckBox setState:[defaults boolForKey:@"TOMDockBounce"]];
 }
 
 - (void)preferencesChanged:(id)sender {
@@ -21,6 +22,7 @@
     [defaults setBool:[iChatCheckBox state] forKey:@"TOMiChat"];
     [defaults setBool:[soundCheckBox state] forKey:@"TOMSound"];
     [defaults setBool:[dockCheckBox state] forKey:@"TOMDock"];
+    [defaults setBool:[dockBounceCheckBox state] forKey:@"TOMDockBounce"];
 
     [[NSNotificationCenter defaultCenter] 
      postNotificationName: @"tomatoPreferencesUpdated" object:nil];

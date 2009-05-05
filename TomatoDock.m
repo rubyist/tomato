@@ -25,7 +25,10 @@
 }
 
 - (void)tomatoEnded:(NSNotification *)notification {
-    [[[NSApplication sharedApplication] dockTile] setBadgeLabel:@""];    
+    [[[NSApplication sharedApplication] dockTile] setBadgeLabel:@""];
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"TOMDockBounce"])
+        [[NSApplication sharedApplication] requestUserAttention:NSCriticalRequest];
 }
 
 @end
