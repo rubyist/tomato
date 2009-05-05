@@ -73,9 +73,6 @@
     NSTimeInterval now = [NSDate timeIntervalSinceReferenceDate];
     int interval = (int)(now - timerStart);
     
-    [[NSNotificationCenter defaultCenter] 
-     postNotificationName: @"tomatoTick" object:self];
-
     if (status == TOMATORUNNING) {
         remaining = TOMATOTIME - interval;
         
@@ -85,6 +82,9 @@
     } else if (status == BREAKRUNNING) {
         remaining = BREAKTIME - interval;
     }
+    
+    [[NSNotificationCenter defaultCenter] 
+     postNotificationName: @"tomatoTick" object:self];
     
     if (remaining == 0) {
         [self expireTimer];
