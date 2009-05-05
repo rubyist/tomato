@@ -1,5 +1,6 @@
 #import "TomatoController.h"
 #import "TomatoTimer.h"
+#import "PreferenceController.h"
 
 @interface TomatoController(Private)
 - (void)updateStatusLine;
@@ -116,6 +117,14 @@
         default:
             [statusLabel setStringValue:@"Waiting"];
     }
+}
+
+- (IBAction)showPreferencePanel:(id)sender {
+    if (!preferenceController) {
+        preferenceController = [[PreferenceController alloc] init];
+    }
+    NSLog(@"Showing prefs %@", preferenceController);
+    [preferenceController showWindow:self];
 }
 
 @end

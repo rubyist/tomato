@@ -1,6 +1,7 @@
 #import <Cocoa/Cocoa.h>
 
 @class TomatoTimer;
+@class PreferenceController;
 
 @interface TomatoController : NSObject {
     TomatoTimer *tomatoTimer;
@@ -12,8 +13,11 @@
     IBOutlet NSTextField *statusLabel;
     IBOutlet NSTextField *completedPoppedLabel;
     IBOutlet NSButton *tomatoButton;
+    
+    PreferenceController *preferenceController;
 }
 
 - (IBAction)startStopPop:(id)sender;
+- (IBAction)showPreferencePanel:(id)sender;
 
 @end

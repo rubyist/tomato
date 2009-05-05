@@ -20,6 +20,8 @@
 		D2C4BC180FAF8614006F7A5C /* TomatoSound.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C4BC170FAF8614006F7A5C /* TomatoSound.m */; };
 		D2C4BC430FAF87E0006F7A5C /* TomatoIChat.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C4BC420FAF87E0006F7A5C /* TomatoIChat.m */; };
 		D2C4BC800FAF8AD6006F7A5C /* TomatoDock.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C4BC7F0FAF8AD6006F7A5C /* TomatoDock.m */; };
+		D2C4BCEE0FB07AD6006F7A5C /* PreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C4BCED0FB07AD6006F7A5C /* PreferenceController.m */; };
+		D2C4BCF00FB07B01006F7A5C /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C4BCEF0FB07B01006F7A5C /* Preferences.xib */; };
 		D2FB4A460F7AC6F80097B5A0 /* Bell.aif in Resources */ = {isa = PBXBuildFile; fileRef = D2FB4A450F7AC6F80097B5A0 /* Bell.aif */; };
 		D2FB4A480F7AC7120097B5A0 /* Hamon.aif in Resources */ = {isa = PBXBuildFile; fileRef = D2FB4A470F7AC7120097B5A0 /* Hamon.aif */; };
 		D2FB4AA50F7ACEEA0097B5A0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FB4AA40F7ACEEA0097B5A0 /* AudioToolbox.framework */; };
@@ -54,6 +56,9 @@
 		D2C4BC420FAF87E0006F7A5C /* TomatoIChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TomatoIChat.m; sourceTree = "<group>"; };
 		D2C4BC7E0FAF8AD6006F7A5C /* TomatoDock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TomatoDock.h; sourceTree = "<group>"; };
 		D2C4BC7F0FAF8AD6006F7A5C /* TomatoDock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TomatoDock.m; sourceTree = "<group>"; };
+		D2C4BCEC0FB07AD6006F7A5C /* PreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceController.h; sourceTree = "<group>"; };
+		D2C4BCED0FB07AD6006F7A5C /* PreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceController.m; sourceTree = "<group>"; };
+		D2C4BCEF0FB07B01006F7A5C /* Preferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		D2FB4A450F7AC6F80097B5A0 /* Bell.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bell.aif; sourceTree = "<group>"; };
 		D2FB4A470F7AC7120097B5A0 /* Hamon.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hamon.aif; sourceTree = "<group>"; };
 		D2FB4AA40F7ACEEA0097B5A0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -91,6 +96,8 @@
 				D2C4BC420FAF87E0006F7A5C /* TomatoIChat.m */,
 				D2C4BC7E0FAF8AD6006F7A5C /* TomatoDock.h */,
 				D2C4BC7F0FAF8AD6006F7A5C /* TomatoDock.m */,
+				D2C4BCEC0FB07AD6006F7A5C /* PreferenceController.h */,
+				D2C4BCED0FB07AD6006F7A5C /* PreferenceController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -153,6 +160,7 @@
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				D2C4BCEF0FB07B01006F7A5C /* Preferences.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -217,6 +225,7 @@
 				D2FB4A480F7AC7120097B5A0 /* Hamon.aif in Resources */,
 				D2FB4AE20F7AD3500097B5A0 /* tomato.icns in Resources */,
 				D269AC590F7D3D2700F1E262 /* tomato.tiff in Resources */,
+				D2C4BCF00FB07B01006F7A5C /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +244,7 @@
 				D2C4BC180FAF8614006F7A5C /* TomatoSound.m in Sources */,
 				D2C4BC430FAF87E0006F7A5C /* TomatoIChat.m in Sources */,
 				D2C4BC800FAF8AD6006F7A5C /* TomatoDock.m in Sources */,
+				D2C4BCEE0FB07AD6006F7A5C /* PreferenceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

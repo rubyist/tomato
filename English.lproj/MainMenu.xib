@@ -358,13 +358,13 @@
 			<object class="NSCustomObject" id="804886100">
 				<string key="NSClassName">TomatoController</string>
 			</object>
-			<object class="NSCustomObject" id="18057351">
+			<object class="NSCustomObject" id="721397040">
 				<string key="NSClassName">TomatoSound</string>
 			</object>
-			<object class="NSCustomObject" id="562486858">
+			<object class="NSCustomObject" id="44017836">
 				<string key="NSClassName">TomatoIChat</string>
 			</object>
-			<object class="NSCustomObject" id="111766987">
+			<object class="NSCustomObject" id="660044926">
 				<string key="NSClassName">TomatoDock</string>
 			</object>
 		</object>
@@ -474,6 +474,14 @@
 						<reference key="destination" ref="900277762"/>
 					</object>
 					<int key="connectionID">479</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showPreferencePanel:</string>
+						<reference key="source" ref="804886100"/>
+						<reference key="destination" ref="609285721"/>
+					</object>
+					<int key="connectionID">483</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -740,17 +748,17 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">480</int>
-						<reference key="object" ref="18057351"/>
+						<reference key="object" ref="721397040"/>
 						<reference key="parent" ref="1049"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">481</int>
-						<reference key="object" ref="562486858"/>
+						<reference key="object" ref="44017836"/>
 						<reference key="parent" ref="1049"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">482</int>
-						<reference key="object" ref="111766987"/>
+						<reference key="object" ref="660044926"/>
 						<reference key="parent" ref="1049"/>
 					</object>
 				</object>
@@ -871,13 +879,13 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>{{525, 802}, {197, 73}}</string>
-					<string>{{207, 285}, {169, 20}}</string>
+					<string>{{174, 738}, {169, 20}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>{74, 862}</string>
 					<string>{{6, 978}, {478, 20}}</string>
-					<string>{{127, 184}, {250, 235}}</string>
-					<string>{{127, 184}, {250, 235}}</string>
+					<string>{{1807, 184}, {250, 235}}</string>
+					<string>{{1807, 184}, {250, 235}}</string>
 					<reference ref="9"/>
 					<string>{{33, 99}, {480, 360}}</string>
 					<string>{3.40282e+38, 3.40282e+38}</string>
@@ -900,7 +908,7 @@
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
-					<string>{{219, 102}, {191, 183}}</string>
+					<string>{{186, 555}, {191, 183}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>{{23, 794}, {245, 183}}</string>
@@ -930,7 +938,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">482</int>
+			<int key="maxID">483</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -939,8 +947,17 @@
 					<string key="className">TomatoController</string>
 					<string key="superclassName">NSObject</string>
 					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">startStopPop:</string>
-						<string key="NS.object.0">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSMutableArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>showPreferencePanel:</string>
+							<string>startStopPop:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>
