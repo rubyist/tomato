@@ -3,6 +3,8 @@
 #import "PreferenceController.h"
 
 @interface TomatoController(Private)
+- (void)registerNotifications;
+
 - (void)updateStatusLine;
 
 - (void)tomatoStarted:(NSNotification *)notification;
@@ -17,52 +19,66 @@
 
 #pragma mark -
 #pragma mark Initialization methods
++ (void)initialize {
+    NSMutableDictionary *defaultValues = [NSMutableDictionary dictionary];
+    [defaultValues setObject:[NSNumber numberWithBool:YES]
+                      forKey:@"TOMiChat"];
+    [defaultValues setObject:[NSNumber numberWithBool:YES]
+                      forKey:@"TOMSound"];
+    [defaultValues setObject:[NSNumber numberWithBool:YES]
+                      forKey:@"TOMDock"];
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
+}
+
 - (id)init {
     if (self = [super init]) {
         tomatoTimer = [[TomatoTimer alloc] init];
         completedTomatoes = 0;
         poppedTomatoes = 0;
         
-        [[NSNotificationCenter defaultCenter] 
-         addObserver:self 
-         selector:@selector(tomatoStarted:) 
-         name:@"tomatoStarted" 
-         object:tomatoTimer]; 
-        
-        [[NSNotificationCenter defaultCenter] 
-         addObserver:self 
-         selector:@selector(tomatoPopped:) 
-         name:@"tomatoPopped" 
-         object:tomatoTimer]; 
-
-        [[NSNotificationCenter defaultCenter] 
-         addObserver:self 
-         selector:@selector(tomatoEnded:) 
-         name:@"tomatoEnded" 
-         object:tomatoTimer]; 
-
-        [[NSNotificationCenter defaultCenter] 
-         addObserver:self 
-         selector:@selector(breakStarted:) 
-         name:@"breakStarted" 
-         object:tomatoTimer]; 
-        
-        [[NSNotificationCenter defaultCenter] 
-         addObserver:self 
-         selector:@selector(breakEnded:) 
-         name:@"breakEnded" 
-         object:tomatoTimer]; 
-        
-        [[NSNotificationCenter defaultCenter] 
-         addObserver:self 
-         selector:@selector(tomatoTick:) 
-         name:@"tomatoTick" 
-         object:tomatoTimer]; 
-                
+        [self registerNotifications];
     }
     return self;
 }
 
+- (void)registerNotifications {
+    [[NSNotificationCenter defaultCenter] 
+     addObserver:self 
+     selector:@selector(tomatoStarted:) 
+     name:@"tomatoStarted" 
+     object:tomatoTimer]; 
+    
+    [[NSNotificationCenter defaultCenter] 
+     addObserver:self 
+     selector:@selector(tomatoPopped:) 
+     name:@"tomatoPopped" 
+     object:tomatoTimer]; 
+    
+    [[NSNotificationCenter defaultCenter] 
+     addObserver:self 
+     selector:@selector(tomatoEnded:) 
+     name:@"tomatoEnded" 
+     object:tomatoTimer]; 
+    
+    [[NSNotificationCenter defaultCenter] 
+     addObserver:self 
+     selector:@selector(breakStarted:) 
+     name:@"breakStarted" 
+     object:tomatoTimer]; 
+    
+    [[NSNotificationCenter defaultCenter] 
+     addObserver:self 
+     selector:@selector(breakEnded:) 
+     name:@"breakEnded" 
+     object:tomatoTimer]; 
+    
+    [[NSNotificationCenter defaultCenter] 
+     addObserver:self 
+     selector:@selector(tomatoTick:) 
+     name:@"tomatoTick" 
+     object:tomatoTimer]; 
+}
 
 
 #pragma mark -
@@ -123,7 +139,6 @@
     if (!preferenceController) {
         preferenceController = [[PreferenceController alloc] init];
     }
-    NSLog(@"Showing prefs %@", preferenceController);
     [preferenceController showWindow:self];
 }
 

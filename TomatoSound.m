@@ -1,7 +1,12 @@
 #import "TomatoSound.h"
 
 @interface TomatoSound(Private)
+- (void)loadNotifications:(NSNotification *)notification;
+- (void)watchTomato;
+- (void)unwatchTomato;
+
 - (SystemSoundID)initializeSoundFromFile:(NSString *)file;
+
 - (void)tomatoEnded:(NSNotification *)notification;
 - (void)breakEnded:(NSNotification *)notification;
 @end
@@ -10,22 +15,44 @@
 
 - (id)init {
     if (self = [super init]) {
+        [self loadNotifications:nil];
+        
         tomatoSound = [self initializeSoundFromFile:@"Bell"];
         breakSound = [self initializeSoundFromFile:@"Hamon"];
-        
-        [[NSNotificationCenter defaultCenter] 
-         addObserver:self 
-         selector:@selector(tomatoEnded:) 
-         name:@"tomatoEnded" 
-         object:nil]; 
-        
-        [[NSNotificationCenter defaultCenter] 
-         addObserver:self 
-         selector:@selector(breakEnded:) 
-         name:@"breakEnded" 
-         object:nil];
     }
     return self;
+}
+
+- (void)loadNotifications:(NSNotification *)notification {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"TOMSound"]) {
+        [self watchTomato];
+    } else {
+        [self unwatchTomato];
+    }
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(loadNotifications:)
+     name:@"tomatoPreferencesUpdated"
+     object:nil];
+}
+
+- (void)watchTomato {
+    [[NSNotificationCenter defaultCenter] 
+     addObserver:self 
+     selector:@selector(tomatoEnded:) 
+     name:@"tomatoEnded" 
+     object:nil]; 
+    
+    [[NSNotificationCenter defaultCenter] 
+     addObserver:self 
+     selector:@selector(breakEnded:) 
+     name:@"breakEnded" 
+     object:nil];    
+}
+
+- (void)unwatchTomato {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (SystemSoundID)initializeSoundFromFile:(NSString *)file {

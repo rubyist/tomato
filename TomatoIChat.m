@@ -2,6 +2,10 @@
 #import "iChat.h"
 
 @interface TomatoIChat(Private)
+- (void)loadNotifications:(NSNotification *)notification;
+- (void)watchTomato;
+- (void)unwatchTomato;
+
 - (void)getIChatApp;
 - (void)iChatInTomato;
 - (void)iChatOnBreak;
@@ -16,24 +20,7 @@
 - (id)init {
     if (self = [super init]) {
         [self getIChatApp];
-
-        [[NSNotificationCenter defaultCenter] 
-         addObserver:self 
-         selector:@selector(tomatoStarted:) 
-         name:@"tomatoStarted"
-         object:nil]; 
-        
-        [[NSNotificationCenter defaultCenter] 
-         addObserver:self 
-         selector:@selector(tomatoPopped:) 
-         name:@"tomatoPopped" 
-         object:nil]; 
-        
-        [[NSNotificationCenter defaultCenter] 
-         addObserver:self 
-         selector:@selector(breakStarted:) 
-         name:@"breakStarted" 
-         object:nil];
+        [self loadNotifications:nil];        
     }
     return self;
 }
@@ -45,6 +32,45 @@
     @catch(NSException *except) {
         NSLog(@"Exception %@", except);
     }
+}
+
+- (void)loadNotifications:(NSNotification *)notification {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"TOMiChat"]) {
+        [self watchTomato];
+    } else {
+        [self unwatchTomato];
+    }
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(loadNotifications:)
+     name:@"tomatoPreferencesUpdated"
+     object:nil];
+}
+
+- (void)watchTomato {
+    [[NSNotificationCenter defaultCenter] 
+     addObserver:self 
+     selector:@selector(tomatoStarted:) 
+     name:@"tomatoStarted"
+     object:nil]; 
+    
+    [[NSNotificationCenter defaultCenter] 
+     addObserver:self 
+     selector:@selector(tomatoPopped:) 
+     name:@"tomatoPopped" 
+     object:nil]; 
+    
+    [[NSNotificationCenter defaultCenter] 
+     addObserver:self 
+     selector:@selector(breakStarted:) 
+     name:@"breakStarted" 
+     object:nil];    
+}
+
+- (void)unwatchTomato {
+    [[NSNotificationCenter defaultCenter]
+     removeObserver:self];
 }
 
 - (void)iChatInTomato {
