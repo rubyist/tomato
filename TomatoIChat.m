@@ -30,14 +30,14 @@
 - (void)iChatInTomato {
     if ([iChatApp isRunning]) {
         iChatApp.status = iChatMyStatusAway;
-        iChatApp.statusMessage = @"tomato";
+        iChatApp.statusMessage = [[NSUserDefaults standardUserDefaults] stringForKey:@"TOMiChatTomato"];
     }
 }
 
 - (void)iChatOnBreak {
     if ([iChatApp isRunning]) {
         iChatApp.status = iChatMyStatusAvailable;
-        iChatApp.statusMessage = @"tomato break";
+        iChatApp.statusMessage = [[NSUserDefaults standardUserDefaults] stringForKey:@"TOMiChatBreak"];
     }
 }
 

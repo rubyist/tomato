@@ -29,6 +29,8 @@
                       forKey:@"TOMDock"];
     [defaultValues setObject:[NSNumber numberWithBool:YES]
                       forKey:@"TOMDockBounce"];
+    [defaultValues setObject:@"tomato" forKey:@"TOMiChatTomato"];
+    [defaultValues setObject:@"tomato break" forKey:@"TOMiChatBreak"];
     
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
 }
