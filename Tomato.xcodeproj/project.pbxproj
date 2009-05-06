@@ -11,7 +11,10 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		D20924CB0FB1D2500007D211 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D20924CA0FB1D2500007D211 /* Growl.framework */; };
+		D20924D30FB1D25D0007D211 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D20924CA0FB1D2500007D211 /* Growl.framework */; };
 		D246D5DA0F7AB48A004A02AC /* TomatoController.m in Sources */ = {isa = PBXBuildFile; fileRef = D246D5D90F7AB48A004A02AC /* TomatoController.m */; };
+		D2676B400FB1C9FD000D2914 /* TomatoGrowl.m in Sources */ = {isa = PBXBuildFile; fileRef = D2676B3F0FB1C9FD000D2914 /* TomatoGrowl.m */; };
 		D269AC280F7D398400F1E262 /* TomatoWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D269AC270F7D398400F1E262 /* TomatoWindow.m */; };
 		D269AC360F7D3B0700F1E262 /* TomatoView.m in Sources */ = {isa = PBXBuildFile; fileRef = D269AC350F7D3B0700F1E262 /* TomatoView.m */; };
 		D269AC590F7D3D2700F1E262 /* tomato.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D269AC580F7D3D2700F1E262 /* tomato.tiff */; };
@@ -29,6 +32,19 @@
 		D2FB4AE20F7AD3500097B5A0 /* tomato.icns in Resources */ = {isa = PBXBuildFile; fileRef = D2FB4AE10F7AD3500097B5A0 /* tomato.icns */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D2676B710FB1CFD6000D2914 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D20924D30FB1D25D0007D211 /* Growl.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
@@ -40,8 +56,11 @@
 		32CA4F630368D1EE00C91783 /* Tomato_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tomato_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Tomato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tomato.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D20924CA0FB1D2500007D211 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		D246D5D80F7AB48A004A02AC /* TomatoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TomatoController.h; sourceTree = "<group>"; };
 		D246D5D90F7AB48A004A02AC /* TomatoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TomatoController.m; sourceTree = "<group>"; };
+		D2676B3E0FB1C9FD000D2914 /* TomatoGrowl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TomatoGrowl.h; sourceTree = "<group>"; };
+		D2676B3F0FB1C9FD000D2914 /* TomatoGrowl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TomatoGrowl.m; sourceTree = "<group>"; };
 		D269AC260F7D398400F1E262 /* TomatoWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TomatoWindow.h; sourceTree = "<group>"; };
 		D269AC270F7D398400F1E262 /* TomatoWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TomatoWindow.m; sourceTree = "<group>"; };
 		D269AC340F7D3B0700F1E262 /* TomatoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TomatoView.h; sourceTree = "<group>"; };
@@ -76,6 +95,7 @@
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				D2FB4AA50F7ACEEA0097B5A0 /* AudioToolbox.framework in Frameworks */,
 				D2A980270F7B92BC003EC938 /* ScriptingBridge.framework in Frameworks */,
+				D20924CB0FB1D2500007D211 /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +123,8 @@
 				D2C4BCED0FB07AD6006F7A5C /* PreferenceController.m */,
 				D2C4BE4E0FB08F76006F7A5C /* TomatoWatcher.h */,
 				D2C4BE4F0FB08F76006F7A5C /* TomatoWatcher.m */,
+				D2676B3E0FB1C9FD000D2914 /* TomatoGrowl.h */,
+				D2676B3F0FB1C9FD000D2914 /* TomatoGrowl.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -173,6 +195,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D20924CA0FB1D2500007D211 /* Growl.framework */,
 				D2A980260F7B92BC003EC938 /* ScriptingBridge.framework */,
 				D2FB4AA40F7ACEEA0097B5A0 /* AudioToolbox.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
@@ -188,6 +211,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Tomato" */;
 			buildPhases = (
+				D2676B710FB1CFD6000D2914 /* CopyFiles */,
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
@@ -251,6 +275,7 @@
 				D2C4BC800FAF8AD6006F7A5C /* TomatoDock.m in Sources */,
 				D2C4BCEE0FB07AD6006F7A5C /* PreferenceController.m in Sources */,
 				D2C4BE500FB08F76006F7A5C /* TomatoWatcher.m in Sources */,
+				D2676B400FB1C9FD000D2914 /* TomatoGrowl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +306,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Volumes/Growl 1.1.4 SDK/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -298,6 +328,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Volumes/Growl 1.1.4 SDK/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Tomato_Prefix.pch;
