@@ -5,7 +5,6 @@
 - (id)init {
     if (self = [super init]) {
         [GrowlApplicationBridge setGrowlDelegate:self];
-        growlReady = NO;
     }
     return self;
 }
@@ -26,10 +25,6 @@
 
 - (NSString *)applicationNameForGrowl {
     return @"Tomato";
-}
-
-- (void)growlIsReady {
-    growlReady = YES;
 }
 
 - (void)tomatoEnded:(NSNotification *)notification {    
