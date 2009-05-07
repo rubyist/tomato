@@ -31,6 +31,8 @@
                       forKey:@"TOMDockBounce"];
     [defaultValues setObject:@"tomato" forKey:@"TOMiChatTomato"];
     [defaultValues setObject:@"tomato break" forKey:@"TOMiChatBreak"];
+    [defaultValues setObject:[NSNumber numberWithInt:1500] forKey:@"TOMTomatoTime"];
+    [defaultValues setObject:[NSNumber numberWithInt:300] forKey:@"TOMBreakTime"];
     
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
 }
@@ -44,6 +46,17 @@
         [self registerNotifications];
     }
     return self;
+}
+
+- (void)setTimerLabelForTomato {
+    [timeLabel setStringValue:[NSString stringWithFormat:@"%02d:%02d", (tomatoTimer.tomatoTime / 60), (tomatoTimer.tomatoTime % 60)]];
+}
+- (void)setTimerLabelForBreak {
+    [timeLabel setStringValue:[NSString stringWithFormat:@"%02d:%02d", (tomatoTimer.breakTime / 60), (tomatoTimer.breakTime % 60)]];
+}
+
+- (void)awakeFromNib {
+    [self setTimerLabelForTomato];
 }
 
 - (void)registerNotifications {
@@ -94,13 +107,13 @@
 
 - (void)tomatoPopped:(NSNotification *)notification {
     poppedTomatoes++;
-    [timeLabel setStringValue:@"25:00"];
+    [self setTimerLabelForTomato];
     [tomatoButton setTitle:@"Start"];
     [self updateStatusLine];
 }
 
 - (void)tomatoEnded:(NSNotification *)notification {
-    [timeLabel setStringValue:@"05:00"];
+    [self setTimerLabelForBreak];
     [tomatoButton setTitle:@"Stop"];
     completedTomatoes++;
     [self updateStatusLine];
@@ -112,7 +125,7 @@
 }
 
 - (void)breakEnded:(NSNotification *)notification {
-    [timeLabel setStringValue:@"25:00"];
+    [self setTimerLabelForTomato];
     [tomatoButton setTitle:@"Start"];
     [self updateStatusLine];
 }

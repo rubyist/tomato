@@ -11,13 +11,16 @@
 
 @implementation TomatoTimer
 
-@synthesize status, remaining;
+@synthesize tomatoTime, breakTime, status, remaining;
 
 - (id)init {
     if (self = [super init]) {
+        tomatoTime = [[NSUserDefaults standardUserDefaults] integerForKey:@"TOMTomatoTime"];
+        breakTime  = [[NSUserDefaults standardUserDefaults] integerForKey:@"TOMBreakTime"];
+        
         status = NOTHINGRUNNING;
-        tickCounter = (TOMATOTIME / 60);
-        remaining = TOMATOTIME;
+        tickCounter = (tomatoTime / 60);
+        remaining = tomatoTime;
     }
     return self;
 }
@@ -74,13 +77,13 @@
     int interval = (int)(now - timerStart);
     
     if (status == TOMATORUNNING) {
-        remaining = TOMATOTIME - interval;
+        remaining = tomatoTime - interval;
         
         if ((tickCounter > 0) && (remaining % 60 == 0)) {
             tickCounter--;
         }
     } else if (status == BREAKRUNNING) {
-        remaining = BREAKTIME - interval;
+        remaining = breakTime - interval;
     }
     
     [[NSNotificationCenter defaultCenter] 
@@ -95,7 +98,7 @@
     if (status == TOMATORUNNING) {
         [tomatoTimer invalidate];
         status = NOTHINGRUNNING;
-        tickCounter = (TOMATOTIME / 60);
+        tickCounter = (tomatoTime / 60);
         [[NSNotificationCenter defaultCenter] 
          postNotificationName: @"tomatoEnded" object:self];        
         [self startBreak];
