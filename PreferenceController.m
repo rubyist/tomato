@@ -18,6 +18,11 @@
     [dockCheckBox setState:[defaults boolForKey:@"TOMDock"]];
     [dockBounceCheckBox setState:[defaults boolForKey:@"TOMDockBounce"]];
 
+    NSNumber *tt = [NSNumber numberWithInt:[[NSUserDefaults standardUserDefaults] integerForKey:@"TOMTomatoTime"]];
+    [tomatoTime setObjectValue:tt];
+
+    NSNumber *bt = [NSNumber numberWithInt:[[NSUserDefaults standardUserDefaults] integerForKey:@"TOMBreakTime"]];
+    [breakTime setObjectValue:bt];
 }
 
 - (void)preferencesChanged:(id)sender {
@@ -29,6 +34,9 @@
     [defaults setBool:[dockCheckBox state] forKey:@"TOMDock"];
     [defaults setBool:[dockBounceCheckBox state] forKey:@"TOMDockBounce"];
 
+    [defaults setObject:[tomatoTime objectValue] forKey:@"TOMTomatoTime"];
+    [defaults setObject:[breakTime objectValue] forKey:@"TOMBreakTime"];
+    
     [[NSNotificationCenter defaultCenter] 
      postNotificationName: @"tomatoPreferencesUpdated" object:nil];
 }

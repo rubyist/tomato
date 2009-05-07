@@ -11,8 +11,12 @@
 - (BOOL)getObjectValue:(id *)obj
              forString:(NSString *)string
       errorDescription:(NSString **)errorString {
-    NSLog(@"Building object for %@", *obj);
-    *obj = [NSNumber numberWithInt:0];
-    return YES;
+    NSArray *parts = [string componentsSeparatedByString:@":"];
+    if ([parts count] == 2) {
+        int total = ([[parts objectAtIndex:0] intValue] * 60) + [[parts objectAtIndex:1] intValue];
+        *obj = [NSNumber numberWithInt:total];
+        return YES;
+    }
+    return NO;
 }
 @end

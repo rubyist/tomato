@@ -1,6 +1,7 @@
 #import "TomatoTimer.h"
 
 @interface TomatoTimer(Private)
+- (void)loadTimesFromPreferences;
 - (void)startTomato;
 - (void)popTomato;
 - (void)startBreak;
@@ -15,14 +16,28 @@
 
 - (id)init {
     if (self = [super init]) {
-        tomatoTime = [[NSUserDefaults standardUserDefaults] integerForKey:@"TOMTomatoTime"];
-        breakTime  = [[NSUserDefaults standardUserDefaults] integerForKey:@"TOMBreakTime"];
+        [self loadTimesFromPreferences];
         
         status = NOTHINGRUNNING;
         tickCounter = (tomatoTime / 60);
         remaining = tomatoTime;
+        
+        [[NSNotificationCenter defaultCenter]
+         addObserver:self
+         selector:@selector(preferencesUpdated:)
+         name:@"tomatoPreferencesUpdated"
+         object:nil];
     }
     return self;
+}
+
+- (void)loadTimesFromPreferences {
+    tomatoTime = [[NSUserDefaults standardUserDefaults] integerForKey:@"TOMTomatoTime"];
+    breakTime  = [[NSUserDefaults standardUserDefaults] integerForKey:@"TOMBreakTime"];    
+}
+
+- (void)preferencesUpdated:(NSNotification *)notification {
+    [self loadTimesFromPreferences];
 }
 
 - (void)startStopPop {

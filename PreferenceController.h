@@ -8,6 +8,8 @@
     IBOutlet NSButton *dockBounceCheckBox;
     IBOutlet NSTextField *iChatTomato;
     IBOutlet NSTextField *iChatBreak;
+    IBOutlet NSTextField *tomatoTime;
+    IBOutlet NSTextField *breakTime;
 }
 
 - (IBAction)preferencesChanged:(id)sender;

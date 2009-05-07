@@ -96,8 +96,13 @@
      selector:@selector(tomatoTick:) 
      name:@"tomatoTick" 
      object:tomatoTimer]; 
-}
 
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(preferencesUpdated:)
+     name:@"tomatoPreferencesUpdated"
+     object:nil];
+}
 
 #pragma mark -
 #pragma tomatoTimer Notification Methods
@@ -134,6 +139,16 @@
 - (void)tomatoTick:(NSNotification *)notification {
     [timeLabel setObjectValue:[NSNumber numberWithInt:tomatoTimer.remaining]];
 }
+
+- (void)preferencesUpdated:(NSNotification *)notification {
+    if (tomatoTimer.status == NOTHINGRUNNING) {
+        // Pull the pref directly because we can'g guarantee the timer has reloaded
+        [timeLabel setObjectValue:[NSNumber numberWithInt:[[NSUserDefaults standardUserDefaults] integerForKey:@"TOMTomatoTime"]]];
+    }
+}
+
+
+
 
 - (IBAction)startStopPop:(id)sender {
     [tomatoTimer startStopPop];
