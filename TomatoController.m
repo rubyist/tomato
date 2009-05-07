@@ -49,10 +49,11 @@
 }
 
 - (void)setTimerLabelForTomato {
-    [timeLabel setStringValue:[NSString stringWithFormat:@"%02d:%02d", (tomatoTimer.tomatoTime / 60), (tomatoTimer.tomatoTime % 60)]];
+    [timeLabel setObjectValue:[NSNumber numberWithInt:tomatoTimer.tomatoTime]];
 }
+
 - (void)setTimerLabelForBreak {
-    [timeLabel setStringValue:[NSString stringWithFormat:@"%02d:%02d", (tomatoTimer.breakTime / 60), (tomatoTimer.breakTime % 60)]];
+    [timeLabel setObjectValue:[NSNumber numberWithInt:tomatoTimer.breakTime]];
 }
 
 - (void)awakeFromNib {
@@ -131,7 +132,7 @@
 }
 
 - (void)tomatoTick:(NSNotification *)notification {
-    [timeLabel setStringValue:[NSString stringWithFormat:@"%02d:%02d", (tomatoTimer.remaining / 60), (tomatoTimer.remaining % 60)]];    
+    [timeLabel setObjectValue:[NSNumber numberWithInt:tomatoTimer.remaining]];
 }
 
 - (IBAction)startStopPop:(id)sender {
