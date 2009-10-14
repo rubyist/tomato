@@ -4,7 +4,7 @@ Features:
 
 * 25 minute work timer
 * 5 minute minimal break timer
-* Minimum break timer automatically starts after tomato ends
+* Minimum break timer can automatically start after tomato ends or be manually started
 * Track tomatoes completed and tomatoes popped for the session
 * Set iChat status for tomato / tomato break
 * Dock icon badge displays remaining tomato time
