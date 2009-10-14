@@ -24,6 +24,8 @@
     [defaultValues setObject:[NSNumber numberWithBool:YES]
                       forKey:@"TOMiChat"];
     [defaultValues setObject:[NSNumber numberWithBool:YES]
+                      forKey:@"TOMautoBreak"];
+    [defaultValues setObject:[NSNumber numberWithBool:YES]
                       forKey:@"TOMSound"];
     [defaultValues setObject:[NSNumber numberWithBool:YES]
                       forKey:@"TOMDock"];
@@ -120,7 +122,13 @@
 
 - (void)tomatoEnded:(NSNotification *)notification {
     [self setTimerLabelForBreak];
-    [tomatoButton setTitle:@"Stop"];
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"TOMautoBreak"]) {
+        [tomatoButton setTitle:@"Stop"];
+    } else {
+        [tomatoButton setTitle:@"Start Break"];
+    }
+
     completedTomatoes++;
     [self updateStatusLine];
 }
@@ -142,7 +150,7 @@
 
 - (void)preferencesUpdated:(NSNotification *)notification {
     if (tomatoTimer.status == NOTHINGRUNNING) {
-        // Pull the pref directly because we can'g guarantee the timer has reloaded
+        // Pull the pref directly because we can't guarantee the timer has reloaded
         [timeLabel setObjectValue:[NSNumber numberWithInt:[[NSUserDefaults standardUserDefaults] integerForKey:@"TOMTomatoTime"]]];
     }
 }

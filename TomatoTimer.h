@@ -3,6 +3,7 @@
 #define NOTHINGRUNNING 0
 #define TOMATORUNNING  1
 #define BREAKRUNNING   2
+#define AWAITINGBREAK  3
 
 @interface TomatoTimer : NSObject {
     int tomatoTime;

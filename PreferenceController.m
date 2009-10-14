@@ -12,6 +12,7 @@
 - (void)windowDidLoad {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [iChatCheckBox setState:[defaults boolForKey:@"TOMiChat"]];
+    [autoStartBreakBox setState:[defaults boolForKey:@"TOMautoBreak"]];
     [iChatTomato setStringValue:[defaults stringForKey:@"TOMiChatTomato"]];
     [iChatBreak setStringValue:[defaults stringForKey:@"TOMiChatBreak"]];
     [soundCheckBox setState:[defaults boolForKey:@"TOMSound"]];
@@ -28,6 +29,7 @@
 - (void)preferencesChanged:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:[iChatCheckBox state] forKey:@"TOMiChat"];
+    [defaults setBool:[autoStartBreakBox state] forKey:@"TOMautoBreak"];
     [defaults setObject:[iChatTomato stringValue] forKey:@"TOMiChatTomato"];
     [defaults setObject:[iChatBreak stringValue] forKey:@"TOMiChatBreak"];
     [defaults setBool:[soundCheckBox state] forKey:@"TOMSound"];

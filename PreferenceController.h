@@ -6,6 +6,7 @@
     IBOutlet NSButton *soundCheckBox;
     IBOutlet NSButton *dockCheckBox;
     IBOutlet NSButton *dockBounceCheckBox;
+    IBOutlet NSButton *autoStartBreakBox;
     IBOutlet NSTextField *iChatTomato;
     IBOutlet NSTextField *iChatBreak;
     IBOutlet NSTextField *tomatoTime;

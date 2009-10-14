@@ -5,6 +5,7 @@
 - (void)startTomato;
 - (void)popTomato;
 - (void)startBreak;
+- (void)startBreakTimer;
 - (void)stopBreak;
 - (void)startTimer;
 - (void)expireTimer;
@@ -51,6 +52,9 @@
         case BREAKRUNNING:
             [self stopBreak];
             break;
+        case AWAITINGBREAK:
+            [self startBreakTimer];
+            break;
     }
 }
 
@@ -69,10 +73,18 @@
 }
 
 - (void)startBreak {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"TOMautoBreak"]) {
+        [self startBreakTimer];
+    } else {
+        status = AWAITINGBREAK;
+    }
+}
+
+- (void)startBreakTimer {
     status = BREAKRUNNING;
     [self startTimer];
     [[NSNotificationCenter defaultCenter] 
-     postNotificationName: @"breakStarted" object:self];
+     postNotificationName: @"breakStarted" object:self];    
 }
 
 - (void)stopBreak {
